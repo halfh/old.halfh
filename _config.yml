@@ -1,7 +1,13 @@
+host: 0.0.0.0
+
 collections:
   authors:
     output: true
 
+site:
+  theme_config:
+    appearence: dark
+    
 defaults:
   - scope:
       path: ""

@@ -1,5 +1,7 @@
+---
+---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="{{ site.theme_config.appearance | default: "dark" }}">
 <head>
     <meta charset="UTF-8">
     <title>{{page.title}}</title>
@@ -7,7 +9,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 </head>
 <body>
-{% include navigation.html %}
-{{content}}
+    <!-- <img id="bg" src="/assets/img/flyoverlake.jpg" /> -->
+    {% include navigation.html %}
+    <div id="content" class="content">{{content}}</div>
 </body>
 </html>

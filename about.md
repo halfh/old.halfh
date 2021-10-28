@@ -4,4 +4,11 @@ title: About
 ---
 # About page
 
-This page tells you a little bit about me.
+---
+
+This human is an internet enthusiast.  
+He prefers to create things that live in the browser.  
+
+---
+
+

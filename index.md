@@ -1,4 +1,7 @@
 ---
 title: Home
+layout: default
 ---
-<h1>{{ "Dis a blog!" | downcase }}</h1>
+# Halfh's blog
+
+`is this code`
