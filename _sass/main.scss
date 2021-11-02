@@ -60,7 +60,7 @@ html[data-theme="dark"] { @include dark-appearance; }
 }
 // -------------------------------------------- //
 
-html { height: 100%; font-size: 16px;}
+html { height: 100%; font-size: 1vh;}
 
 body {
   font-family:  "Inter", -apple-system, "avenir next", avenir, roboto, noto, ubuntu, "helvetica neue", helvetica, sans-serif;
@@ -129,6 +129,7 @@ nav a{
 }
 
 body {
+  font-size: 1.7em;
   @include lg-screen{
     font-size: 2em;
   }

@@ -11,4 +11,11 @@ He prefers to create things that live in the browser.
 
 ---
 
+working remotely from the phone
+dis iz hard wrk sitting out in d sun
 
+---
+
+sun's rays are warm
+
+ka pa delas ptic
