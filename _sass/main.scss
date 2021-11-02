@@ -1,261 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-html {
-  --bg: #FFF;
-  --bg-secondary: #f8f8f8;
-  --headings: #000;
-  --text: #333;
-  --links: hotpink;
-  --highlight: #FFECB2; // light yellow
-  --code-text: #9D174D;
-  --share-text: #999;
-}
-
-// -------------- THEME SWITCHER -------------- //
-@mixin dark-appearance {
-  html, body  {
-    --headings: lightseagreen;
-    --links: hotpink;
-    --highlight: #41C7C7;
-    --bg: #1f242A;
-    --bg-secondary: #323945;
-    --text: #adb5bd;
-    --code-text: #91A7FF;
-    --share-text: #C4C4C4;
-  };
-}
-html[data-theme="dark"] { @include dark-appearance; }
-
-@media (prefers-color-scheme: dark) {
-  body[data-theme="auto"] { @include dark-appearance; }
-}
-// -------------------------------------------- //
-// -------------- Screen size ----------------- //
-//Large Screen - 993 to 1170 screen size
-@mixin lg-screen{
-  @media only screen and (max-width: 1170px) {
-    @content;
-  }
-}
-
-//Medium Screen - 768 to 992 screen size
-@mixin md-screen{
-  @media only screen and (max-width: 992px) {
-    @content;
-  }
-}
-
-//Medium Screen - 575 to 767 screen size
-@mixin sm-screen{
-  @media only screen and (max-width: 767px) {
-    @content;
-  }
-}
-
-//Medium Screen - below 575 screen size
-@mixin xs-screen{
-  @media only screen and (max-width: 575px) {
-    @content;
-  }
-}
-// -------------------------------------------- //
-
-html { height: 100%; font-size: 1vh;}
-
+$bg: lightseagreen;
+$text: white;
+$link: hotpink;
+$highlight: white;
+$dg: rgba(0, 0, 0, 0.5);
+$bgo: rgba(32, 178, 170, 0.5);
 body {
-  font-family:  "Inter", -apple-system, "avenir next", avenir, roboto, noto, ubuntu, "helvetica neue", helvetica, sans-serif;
-  font-size: 1.0rem;
-  line-height: 2;
-  margin: 0;
-  padding: 2vh;
-  min-height: 100%;  
-  // background-image: url("../img/bigbg.webp");
-  background-image: url("../img/bigbg.jpg");
-  background-color: black;
-  opacity: 1;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  // overflow: hidden;
-}
-body .content {
-  background-color: black;
-  opacity: 0.6;
-  padding: 1vh;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  contain: content;
-  // overflow:visible;
+	// background-color: $bg;
+	background-image: url('/assets/img/bigbg.jpg');
+	color: $text;
+	margin: 0;
+	padding: 0;
 }
 nav {
-  // background-color:black;
-  // width: 100%;
-  text-align: center;
-  opacity: 0.7;
-  padding: 1vh;
-  // height: auto;
-  position: relative;
-  
+	background-color: $dg;
+	padding: 0.5rem;
+	a {
+		font-weight: bold;
+		font-size: 2rem;
+		text-decoration: none;
+		color: $link;
+		border-bottom: 0.3rem solid $text;
+		display: inline-flex;
+		margin: 0;
+		padding: 0;
+	}
 }
-nav a{
-  display: inline-block;
-  border-radius: 0.1em;
-  border: 0.1em solid var(--highlight);
-  color: var(--links);
-  text-decoration:none;
-  margin-right: 1em;
-  font-size: 2em;
-  font-weight:bold;
-  text-align: center;
-  padding: 0 0.5em;
-  background-color: var(--bg-secondary);
-  
-  @include lg-screen{
-    font-size: 2em;
-  }
-  
-  @include md-screen{
-    font-size: 1.5em;
-  }
-  
-  @include sm-screen{
-    font-size: 1.3em;
-  }
-  
-  @include xs-screen{
-    font-size: 1em;
-  } 
-}
-
-body {
-  font-size: 1.7em;
-  @include lg-screen{
-    font-size: 2em;
-  }
-  @include md-screen{
-    font-size: 1.5em;
-  }
-  @include sm-screen{
-    font-size: 1.3em;
-  }
-  @include xs-screen{
-    font-size: 1em;
-  } 
-}
-pre, code {
-  font-family: "Anonymous Pro", "Courier New", monospace;
-  font-size: 0.9rem;
-}
-
-h2, h3, h4, h5 { margin-top: 1.5em; }
-
-hr { margin: 1em 0; }
-
-
-
-
-html, body {
-  background-color: var(--bg);
-  color: var(--text);
-}
-h1, h2, h3, h4, h5, h6 {
-  color: var(--headings);
-}
-p, strong, b, em, small, li, hr, table, figcaption {
-  color: var(--text);
-}
-.highlight, pre code, blockquote {
-  border-radius: 0.5em;
-}
-blockquote {
-  background-color: var(--bg-secondary);
-  border: 1px var(--border) solid;
-}
-a {
-  color: var(--links);
-}
-*:target { background-color: var(--bg-secondary); }
-
-html.transition,
-html.transition *,
-html.transition *:before,
-html.transition *:after {
-  transition: all 250ms !important;
-  transition-delay: 0 !important;
-}
-
-.theme-toggle {
-  color: var(--text);
-  background-color: transparent;
-  padding: 4px;
-  cursor: pointer;
-  margin: 1em;
-  position: fixed;
-  right: 0;
-  top: 0;
-  border: 2px transparent solid;
-  outline: none;
-}
-
-.theme-toggle:hover {
-  color: var(--links);
-  outline: none;
-}
-.theme-toggle:focus {
-  outline: none;
-}
-.dashed {
-  border-top: 1px var(--text) dashed;
-  margin: 0.5em 0;
-}
-mark {
-  padding: 0.4em;
-  background-color: var(--highlight);
-  font-size: 0.6em;
-  letter-spacing: 1px;
-}
-
-.post-date {
-  color: var(--secondary-text);
-  //margin-bottom: 1rem;
-  font-size: 0.8em;
-}
-.home-date {
-  font-family: monospace;
-}
-.post-list-item a {
-  text-decoration: none;
-}
-.text-bold {
-  font-weight: bold;
-}
-.text-upcase {
-  text-transform: uppercase;
-}
-p code, li code {
-  background-color: var(--bg-secondary);
-  padding: 0.2rem;
-  color: var(--code-text);
-  font-weight: bold;
-}
-.post-title {
-  margin-bottom:-1.5rem;
-}
-.project-title {
-  margin-bottom: 0.8rem;
-}
-.credits {
-  font-size: 0.8em;
-  color: var(--text);
-  margin: 8em auto -4em auto;
-  text-align: center;
-  a {
-    color: var(--text);
-    text-decoration: none;
-    font-weight: bold;
-  }
-  a:hover {
-    color: var(--links);
-  }
+.content {
+	hr {
+		border-bottom: 0.3rem $bgo solid;
+	}
+	.title-dg {
+		background-color: $dg;
+		text-align: center;
+	}
+	a {
+		text-decoration: none;
+		text-align: right;
+		color: $link;
+		border-bottom: 0.2rem solid $text;
+		display: inline-flex;
+		margin: 0;
+		padding: 0;
+		background-color: $bgo;
+	}
+	a:visited {
+		color: $highlight;
+	}
+	ul {
+		list-style-type: none;
+		padding: 0;
+	}
+	code {
+		text-align: right;
+		display: inline-block;
+		color: $highlight;
+	}
 }

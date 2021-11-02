@@ -16,6 +16,3 @@ dis iz hard wrk sitting out in d sun
 
 ---
 
-sun's rays are warm
-
-ka pa delas ptic
