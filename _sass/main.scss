@@ -4,10 +4,15 @@ $link: hotpink;
 $highlight: white;
 $dg: rgba(0, 0, 0, 0.5);
 $bgo: rgba(32, 178, 170, 0.5);
+
 body {
-	// background-color: $bg;
-	background-image: url('/assets/img/bigbg.jpg');
+	background-color: $dg;
+	background-image: url('/assets/img/bigbg.webp');
+	background-repeat: no-repeat;
+	background-size: cover;
+
 	color: $text;
+	width: 100%;
 	margin: 0;
 	padding: 0;
 }
@@ -29,30 +34,81 @@ nav {
 	hr {
 		border-bottom: 0.3rem $bgo solid;
 	}
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-transform: uppercase;
+	}
 	.title-dg {
 		background-color: $dg;
 		text-align: center;
 	}
 	a {
 		text-decoration: none;
-		text-align: right;
+		// text-align: right;
 		color: $link;
 		border-bottom: 0.2rem solid $text;
 		display: inline-flex;
 		margin: 0;
 		padding: 0;
-		background-color: $bgo;
+		// background-color: $bgo;
 	}
 	a:visited {
-		color: $highlight;
+		color: $bg;
+		background-color: $dg;
 	}
 	ul {
+		// background-color: $dg;
 		list-style-type: none;
-		padding: 0;
+		padding: 1rem;
+		li {
+			background-color: $dg;
+		}
+		li:nth-child(odd) {
+			text-align: left;
+			border-left: 0.3rem solid $link;
+			border-bottom: 0.3rem solid $link;
+		}
+		li:nth-child(even) {
+			text-align: right;
+			border-bottom: 0.3rem solid $bg;
+			border-right: 0.3rem solid $bg;
+		}
 	}
 	code {
 		text-align: right;
 		display: inline-block;
 		color: $highlight;
+	}
+	.post-excerpt {
+		padding: 0 1rem;
+	}
+}
+/** place to put media q stuff**/
+
+@media (min-width: 30rem) and (max-width: 50rem) and (orientation: landscape) {
+	body {
+		background-color: $dg;
+		// background-image: url('/assets/img/bg_med.webp');
+		background-repeat: no-repeat;
+		background-size: 100vw auto;
+	}
+}
+@media (max-width: 40rem) and (orientation: portrait) {
+	body {
+		background-color: $dg;
+		// background-image: url('/assets/img/bg.webp');
+		background-repeat: no-repeat;
+		background-size: auto 100vh;
+		background-position: top -10vw auto auto;
+	}
+}
+@media (min-width: 60rem) and (orientation: portrait) {
+	body {
+		.content {
+			width: 50vw;
+		}
 	}
 }

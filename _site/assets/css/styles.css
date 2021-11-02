@@ -1,4 +1,4 @@
-body { background-image: url("/assets/img/bigbg.jpg"); color: white; margin: 0; padding: 0; }
+body { background-color: rgba(0, 0, 0, 0.5); background-image: url("/assets/img/bigbg.webp"); background-repeat: no-repeat; background-size: cover; color: white; width: 100%; margin: 0; padding: 0; }
 
 nav { background-color: rgba(0, 0, 0, 0.5); padding: 0.5rem; }
 
@@ -6,14 +6,31 @@ nav a { font-weight: bold; font-size: 2rem; text-decoration: none; color: hotpin
 
 .content hr { border-bottom: 0.3rem rgba(32, 178, 170, 0.5) solid; }
 
+.content h2, .content h3, .content h4, .content h5, .content h6 { text-transform: uppercase; }
+
 .content .title-dg { background-color: rgba(0, 0, 0, 0.5); text-align: center; }
 
-.content a { text-decoration: none; text-align: right; color: hotpink; border-bottom: 0.2rem solid white; display: inline-flex; margin: 0; padding: 0; background-color: rgba(32, 178, 170, 0.5); }
+.content a { text-decoration: none; color: hotpink; border-bottom: 0.2rem solid white; display: inline-flex; margin: 0; padding: 0; }
 
-.content a:visited { color: white; }
+.content a:visited { color: lightseagreen; background-color: rgba(0, 0, 0, 0.5); }
 
-.content ul { list-style-type: none; padding: 0; }
+.content ul { list-style-type: none; padding: 1rem; }
+
+.content ul li { background-color: rgba(0, 0, 0, 0.5); }
+
+.content ul li:nth-child(odd) { text-align: left; border-left: 0.3rem solid hotpink; border-bottom: 0.3rem solid hotpink; }
+
+.content ul li:nth-child(even) { text-align: right; border-bottom: 0.3rem solid lightseagreen; border-right: 0.3rem solid lightseagreen; }
 
 .content code { text-align: right; display: inline-block; color: white; }
+
+.content .post-excerpt { padding: 0 1rem; }
+
+/** place to put media q stuff**/
+@media (min-width: 30rem) and (max-width: 50rem) and (orientation: landscape) { body { background-color: rgba(0, 0, 0, 0.5); background-repeat: no-repeat; background-size: 100vw auto; } }
+
+@media (max-width: 40rem) and (orientation: portrait) { body { background-color: rgba(0, 0, 0, 0.5); background-repeat: no-repeat; background-size: auto 100vh; background-position: top -10vw auto auto; } }
+
+@media (min-width: 60rem) and (orientation: portrait) { body .content { width: 50vw; } }
 
 /*# sourceMappingURL=styles.css.map */
