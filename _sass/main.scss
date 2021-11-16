@@ -2,15 +2,23 @@ $bg: lightseagreen;
 $text: white;
 $link: hotpink;
 $highlight: white;
-$dg: rgba(0, 0, 0, 0.5);
+$dg: rgba(4, 25, 24, 0.5);
+$wg: rgba(255, 255, 255, 0.2);
 $bgo: rgba(32, 178, 170, 0.5);
 
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
 body {
+	overflow: hidden;
 	background-color: $dg;
 	background-image: url('/assets/img/bigbg.webp');
 	background-repeat: no-repeat;
 	background-size: cover;
-
+	background-attachment: fixed;
 	color: $text;
 	width: 100%;
 	margin: 0;
@@ -19,6 +27,11 @@ body {
 nav {
 	background-color: $dg;
 	padding: 0.5rem;
+	position: fixed;
+	width: 100%;
+	overflow: hidden;
+	// border: 1px solid pink;
+	top: 0;
 	a {
 		font-weight: bold;
 		font-size: 2rem;
@@ -29,11 +42,31 @@ nav {
 		margin: 0;
 		padding: 0;
 	}
+	.nav-icon {
+		width: 2rem;
+		fill: $link;
+	}
 }
 .content {
+	background-color: $dg;
+	overflow-y: scroll;
+	width: 100%;
+	height: 90vh;
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	margin: 10vh 0;
+	//dev shit
+	// background: #000000;
+	// nested el in .content
+	.icon-header {
+		display: block;
+		width: 20vw;
+	}
 	hr {
 		border-bottom: 0.3rem $bgo solid;
 	}
+	h1,
 	h2,
 	h3,
 	h4,
@@ -41,10 +74,36 @@ nav {
 	h6 {
 		text-transform: uppercase;
 	}
-	.title-dg {
-		background-color: $dg;
-		text-align: center;
+	p {
+		font-size: 1.2rem;
 	}
+	article {
+		padding: 2rem;
+
+		header {
+			display: flex;
+			align-items: center;
+			text-align: center;
+			justify-content: center;
+			background: $dg;
+			border-left: 0.3rem solid $link;
+			border-bottom: 0.3rem solid $link;
+			border-right: 0.3rem solid $bg;
+			border-top: 0.3rem solid $bg;
+			time {
+				color: $link;
+			}
+		}
+		main {
+			p {
+				margin: 0.5rem 0;
+			}
+		}
+		footer {
+			height: 1vh;
+		}
+	}
+
 	a {
 		text-decoration: none;
 		// text-align: right;
@@ -88,27 +147,50 @@ nav {
 }
 /** place to put media q stuff**/
 
-@media (min-width: 30rem) and (max-width: 50rem) and (orientation: landscape) {
-	body {
-		background-color: $dg;
-		// background-image: url('/assets/img/bg_med.webp');
-		background-repeat: no-repeat;
-		background-size: 100vw auto;
-	}
-}
-@media (max-width: 40rem) and (orientation: portrait) {
-	body {
-		background-color: $dg;
-		// background-image: url('/assets/img/bg.webp');
-		background-repeat: no-repeat;
-		background-size: auto 100vh;
-		background-position: top -10vw auto auto;
-	}
-}
-@media (min-width: 60rem) and (orientation: portrait) {
-	body {
-		.content {
-			width: 50vw;
+@media (max-width: 22rem) and (orientation: portrait) {
+	nav {
+		a {
+			line-height: 2rem;
+			span {
+				transition: all 0.5s;
+				// transition-delay: 0.1s;
+				display: none;
+				opacity: 0;
+				// visibility: hidden;
+			}
 		}
+		// a:hover {
+		// 	line-height: 2rem;
+		// 	span {
+		// 		opacity: 1;
+		// 		visibility: visible;
+		// 		// display: inline-block;
+		// 	}
+		// }
 	}
 }
+// @media (min-width: 30rem) and (max-width: 50rem) and (orientation: landscape) {
+// 	body {
+// 		background-color: $dg;
+// 		// background-image: url('/assets/img/bg_med.webp');
+// 		background-repeat: no-repeat;
+// 		background-size: 100vw auto;
+// 	}
+// }
+// @media (max-width: 40rem) and (orientation: portrait) {
+// 	body {
+// 		background-color: $dg;
+// 		// background-image: url('/assets/img/bg.webp');
+// 		background-repeat: no-repeat;
+// 		background-size: auto 100vh;
+// 		background-position: top -10vw auto auto;
+// 	}
+// }
+// @media (min-width: 60rem) and (orientation: portrait) {
+// 	body {
+// 		.content {
+// 			margin: auto;
+// 			width: 50vw;
+// 		}
+// 	}
+// }

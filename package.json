@@ -1,0 +1,21 @@
+{
+  "name": "blogmarkdown",
+  "version": "1.0.0",
+  "description": "--- author: halfh --- # trying out jekyll static blog thingy heard about this stuff, trying it out now",
+  "main": "index.js",
+  "scripts": {
+    "start" : "jekyll serve --livereload -I",
+    "build" : "jekyll build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halfh/blogmarkdown.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/halfh/blogmarkdown/issues"
+  },
+  "homepage": "https://github.com/halfh/blogmarkdown#readme"
+}

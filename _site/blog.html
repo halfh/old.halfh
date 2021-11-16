@@ -5,43 +5,97 @@
     <title>Blog</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <script src="/assets/js/hover.js"></script>
 </head>
 <body>
     <nav>
 
-    <a href="/" >
-    Home
+    <a onmouseenter="showDisplay(this)" onmouseleave="hideDisplay(this)" href="/" >
+        <img src="/assets/img/icons8-home.svg" class="nav-icon" alt="Home">
+        <span>Home</span>
     </a>
 
-    <a href="/about.html" >
-    About
+    <a onmouseenter="showDisplay(this)" onmouseleave="hideDisplay(this)" href="/about.html" >
+        <img src="/assets/img/icons8-about.svg" class="nav-icon" alt="About">
+        <span>About</span>
     </a>
 
-    <a href="/blog.html" class="current">
-    Blog
+    <a onmouseenter="showDisplay(this)" onmouseleave="hideDisplay(this)" href="/blog.html" class="current">
+        <img src="/assets/img/icons8-news.svg" class="nav-icon" alt="Blog">
+        <span>Blog</span>
     </a>
 
 </nav>
-    <div id="content" class="content"><h1 class="title-dg">Latest Posts</h1>
-
+    <div id="content" class="content"><header>
+  <h1 class="title-dg">Latest Posts</h1>
+  <img class="icon-header" src="/assets/img/icons8-news.svg" alt="Posts">
+</header>
 <ul>
   
     <li class="post-excerpt">
-      <h2><a href="/2021/09/03/css.html">Rediscovering css</a></h2>
-      <p>It was with great pleasure and dread. That I set sail on the journey of rediscovering CSS.</p>
+      <article>
+        <header>
+          <h2><a href="/2021/11/16/tabby-terminal.html">Tabby terminal for windows</a></h2>
+          <time>16 Nov 2021</time>
+        </header>
+        <main>
+          <p>I remember using cmder for a while on windows. It was a great looking terminal.<br />
+Sadly it was very slow to load and to work with.</p>
 
+        </main>
+      </article>
     </li>
   
     <li class="post-excerpt">
-      <h2><a href="/2021/09/02/markdown.html">I found out about markdown...</a></h2>
-      <p>So I was thinking, how should I write my blog posts</p>
+      <article>
+        <header>
+          <h2><a href="/2021/11/04/jekyll-gemfile.html">Setting up jekyll on WSL2</a></h2>
+          <time>04 Nov 2021</time>
+        </header>
+        <main>
+          <p>Missing gems in jekyll gemfile cause it to not work on WSL2.</p>
 
+        </main>
+      </article>
     </li>
   
     <li class="post-excerpt">
-      <h2><a href="/2021/09/01/Writing-a-blog.html">I have decided to start writing</a></h2>
-      <p>Start writing a blog about my experiences and struggles with common day technology.</p>
+      <article>
+        <header>
+          <h2><a href="/2021/09/03/css.html">Rediscovering css</a></h2>
+          <time>03 Sep 2021</time>
+        </header>
+        <main>
+          <p>It was with great pleasure and dread. That I set sail on the journey of rediscovering CSS.</p>
 
+        </main>
+      </article>
+    </li>
+  
+    <li class="post-excerpt">
+      <article>
+        <header>
+          <h2><a href="/2021/09/02/markdown.html">I found out about markdown...</a></h2>
+          <time>02 Sep 2021</time>
+        </header>
+        <main>
+          <p>So I was thinking, how should I write my blog posts</p>
+
+        </main>
+      </article>
+    </li>
+  
+    <li class="post-excerpt">
+      <article>
+        <header>
+          <h2><a href="/2021/09/01/Writing-a-blog.html">I have decided to start writing</a></h2>
+          <time>01 Sep 2021</time>
+        </header>
+        <main>
+          <p>Start writing a blog about my experiences and struggles with common day technology.</p>
+
+        </main>
+      </article>
     </li>
   
 </ul></div>

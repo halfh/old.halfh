@@ -5,20 +5,24 @@
     <title>About</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <script src="/assets/js/hover.js"></script>
 </head>
 <body>
     <nav>
 
-    <a href="/" >
-    Home
+    <a onmouseenter="showDisplay(this)" onmouseleave="hideDisplay(this)" href="/" >
+        <img src="/assets/img/icons8-home.svg" class="nav-icon" alt="Home">
+        <span>Home</span>
     </a>
 
-    <a href="/about.html" class="current">
-    About
+    <a onmouseenter="showDisplay(this)" onmouseleave="hideDisplay(this)" href="/about.html" class="current">
+        <img src="/assets/img/icons8-about.svg" class="nav-icon" alt="About">
+        <span>About</span>
     </a>
 
-    <a href="/blog.html" >
-    Blog
+    <a onmouseenter="showDisplay(this)" onmouseleave="hideDisplay(this)" href="/blog.html" >
+        <img src="/assets/img/icons8-news.svg" class="nav-icon" alt="Blog">
+        <span>Blog</span>
     </a>
 
 </nav>

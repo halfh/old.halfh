@@ -1,6 +1,9 @@
 - name: Home
   link: /
+  icon: icons8-home.svg
 - name: About
   link: /about.html
+  icon: icons8-about.svg
 - name: Blog
   link: /blog.html
+  icon: icons8-news.svg
