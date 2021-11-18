@@ -106,6 +106,18 @@ nav {
 		footer {
 			height: 1vh;
 		}
+		code {
+			border: 0.1rem solid $bgo;
+			background-color: $dg;
+			padding: 0rem 0.3rem;
+			margin: 0.1rem;
+			text-align: left;
+			display: inline-block;
+			color: $highlight;
+		}
+		pre {
+			font-size: 1rem;
+		}
 	}
 
 	a {
@@ -140,11 +152,7 @@ nav {
 			border-right: 0.3rem solid $bg;
 		}
 	}
-	code {
-		text-align: right;
-		display: inline-block;
-		color: $highlight;
-	}
+
 	.post-excerpt {
 		padding: 0 1rem;
 	}

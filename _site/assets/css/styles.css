@@ -30,6 +30,10 @@ nav .nav-icon { width: 2rem; fill: hotpink; }
 
 .content article footer { height: 1vh; }
 
+.content article code { border: 0.1rem solid rgba(32, 178, 170, 0.5); background-color: rgba(4, 25, 24, 0.5); padding: 0rem 0.3rem; margin: 0.1rem; text-align: left; display: inline-block; color: white; }
+
+.content article pre { font-size: 1rem; }
+
 .content a { text-decoration: none; color: hotpink; display: inline-flex; margin: 0; padding: 0; }
 
 .content a:visited { color: lightseagreen; background-color: rgba(4, 25, 24, 0.5); }
@@ -41,8 +45,6 @@ nav .nav-icon { width: 2rem; fill: hotpink; }
 .content ul li:nth-child(odd) { text-align: left; border-left: 0.3rem solid hotpink; border-bottom: 0.3rem solid hotpink; }
 
 .content ul li:nth-child(even) { text-align: right; border-bottom: 0.3rem solid lightseagreen; border-right: 0.3rem solid lightseagreen; }
-
-.content code { text-align: right; display: inline-block; color: white; }
 
 .content .post-excerpt { padding: 0 1rem; }
 
