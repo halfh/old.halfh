@@ -26,7 +26,13 @@ nav .nav-icon { width: 2rem; fill: hotpink; }
 
 .content article header time { color: hotpink; }
 
-.content article main p { margin: 0.5rem 0; }
+.content article main p { margin: 0.5rem 0; padding: 0.1rem 0; }
+
+.content article main p:first-of-type { margin: 1rem 0rem; }
+
+.content article main h1, .content article main h2, .content article main h3, .content article main h4, .content article main h5, .content article main h6 { border-bottom: 0.5rem double lightseagreen; }
+
+.content article main h1 { font-weight: bold; }
 
 .content article footer { height: 1vh; }
 
@@ -50,5 +56,7 @@ nav .nav-icon { width: 2rem; fill: hotpink; }
 
 /** place to put media q stuff**/
 @media (max-width: 22rem) and (orientation: portrait) { nav a span { transition: all 0.5s; display: none; opacity: 0; } nav a.check { padding-right: 0px; } }
+
+@media (min-width: 60rem) { .content { padding: 0 15vw; } nav { padding: 0 15vw; } nav a:first-of-type { margin-left: 2rem; } }
 
 /*# sourceMappingURL=styles.css.map */

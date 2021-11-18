@@ -27,7 +27,6 @@ function hideDisplay (e){
 function changeMediaQ () {
     let mq = window.matchMedia("(max-width: 22rem) and (orientation: portrait)");
     mq.onchange = (e) => {
-        // console.log('mq.onchange event');
         if(!e.matches) {
             let checks = document.querySelectorAll('.check');
             checks.forEach(element => {
@@ -44,5 +43,4 @@ function changeMediaQ () {
             });
         }
     }
-    
 }

@@ -101,6 +101,21 @@ nav {
 		main {
 			p {
 				margin: 0.5rem 0;
+				padding: 0.1rem 0;
+			}
+			p:first-of-type {
+				margin: 1rem 0rem;
+			}
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				border-bottom: 0.5rem double $bg;
+			}
+			h1 {
+				font-weight: bold;
 			}
 		}
 		footer {
@@ -173,14 +188,19 @@ nav {
 		a.check {
 			padding-right: 0px;
 		}
-		// a:hover {
-		// 	line-height: 2rem;
-		// 	span {
-		// 		opacity: 1;
-		// 		visibility: visible;
-		// 		// display: inline-block;
-		// 	}
-		// }
+	}
+}
+
+// big screen
+@media (min-width: 60rem) {
+	.content {
+		padding: 0 15vw;
+	}
+	nav {
+		padding: 0 15vw;
+		a:first-of-type {
+			margin-left: 2rem;
+		}
 	}
 }
 // @media (min-width: 30rem) and (max-width: 50rem) and (orientation: landscape) {
