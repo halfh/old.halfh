@@ -2,9 +2,11 @@
 
 body { overflow: hidden; background-color: rgba(4, 25, 24, 0.5); background-image: url("/assets/img/bigbg.webp"); background-repeat: no-repeat; background-size: cover; background-attachment: fixed; color: white; width: 100%; margin: 0; padding: 0; }
 
-nav { background-color: rgba(4, 25, 24, 0.5); padding: 0.5rem; position: fixed; width: 100%; overflow: hidden; border: 1px solid pink; top: 0; }
+nav { background-color: rgba(4, 25, 24, 0.5); padding: 0.5rem; position: fixed; width: 100%; overflow: hidden; top: 0; }
 
-nav a { font-weight: bold; font-size: 2rem; text-decoration: none; color: hotpink; border-bottom: 0.3rem solid white; display: inline-flex; margin: 0; padding: 0; }
+nav a { font-weight: bold; font-size: 2rem; text-decoration: none; color: hotpink; border-bottom: 0.3rem solid white; display: inline-flex; margin: 0; padding: 0; line-height: 2rem; }
+
+nav a.check { padding-right: 1px; }
 
 nav .nav-icon { width: 2rem; fill: hotpink; }
 
@@ -28,7 +30,7 @@ nav .nav-icon { width: 2rem; fill: hotpink; }
 
 .content article footer { height: 1vh; }
 
-.content a { text-decoration: none; color: hotpink; border-bottom: 0.2rem solid white; display: inline-flex; margin: 0; padding: 0; }
+.content a { text-decoration: none; color: hotpink; display: inline-flex; margin: 0; padding: 0; }
 
 .content a:visited { color: lightseagreen; background-color: rgba(4, 25, 24, 0.5); }
 
@@ -45,6 +47,6 @@ nav .nav-icon { width: 2rem; fill: hotpink; }
 .content .post-excerpt { padding: 0 1rem; }
 
 /** place to put media q stuff**/
-@media (max-width: 22rem) and (orientation: portrait) { nav a { line-height: 2rem; } nav a span { transition: all 0.5s; display: none; opacity: 0; } }
+@media (max-width: 22rem) and (orientation: portrait) { nav a span { transition: all 0.5s; display: none; opacity: 0; } nav a.check { padding-right: 0px; } }
 
 /*# sourceMappingURL=styles.css.map */

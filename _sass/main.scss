@@ -41,6 +41,10 @@ nav {
 		display: inline-flex;
 		margin: 0;
 		padding: 0;
+		line-height: 2rem;
+	}
+	a.check {
+		padding-right: 1px;
 	}
 	.nav-icon {
 		width: 2rem;
@@ -108,7 +112,7 @@ nav {
 		text-decoration: none;
 		// text-align: right;
 		color: $link;
-		border-bottom: 0.2rem solid $text;
+		// border-bottom: 0.2rem solid $text;
 		display: inline-flex;
 		margin: 0;
 		padding: 0;
@@ -150,7 +154,6 @@ nav {
 @media (max-width: 22rem) and (orientation: portrait) {
 	nav {
 		a {
-			line-height: 2rem;
 			span {
 				transition: all 0.5s;
 				// transition-delay: 0.1s;
@@ -158,6 +161,9 @@ nav {
 				opacity: 0;
 				// visibility: hidden;
 			}
+		}
+		a.check {
+			padding-right: 0px;
 		}
 		// a:hover {
 		// 	line-height: 2rem;

@@ -1,6 +1,6 @@
 <nav>
 {% for item in site.data.navigation %}
-    <a onmouseenter="showDisplay(this)" onmouseleave="hideDisplay(this)" href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
+    <a class="check" onmouseenter="showDisplay(this)" onmouseleave="hideDisplay(this)" href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
         <img src="/assets/img/{{ item.icon }}" class="nav-icon" alt="{{ item.name }}">
         <span>{{ item.name }}</span>
     </a>
