@@ -24,6 +24,8 @@ function hideDisplay (e){
     }, 500);
     return ;
 }
+
+// future do one foreach and check match inside, less code
 function changeMediaQ () {
     let mq = window.matchMedia("(max-width: 22rem) and (orientation: portrait)");
     mq.onchange = (e) => {
