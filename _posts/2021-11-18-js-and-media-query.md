@@ -63,4 +63,16 @@ function changeMediaQ () {
         }
     }
 }
-```
+```  
+Which runs on `window.onload` event once and listenes to orientation change of a device and sets the correct value to the properties needed for the animation.  
+
+# Conclusion
+
+I really wanted to do all my looks with only CSS, but for this one feature, I had to compromise.  
+
+It is a native javascript solution, called in the olden ways, directly from the element with html javascript events.  
+
+I feel it is light weight enough for my current use case. If these edge cases persist in the future, I might have to implement a UI framework/library and work with that. But for now, I'm quite happy with the native solution.  
+  
+  
+---
