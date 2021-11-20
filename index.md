@@ -2,6 +2,6 @@
 title: Home
 layout: default
 ---
-# Halfh's blog
+![me](./assets/img/me_avatar.webp){: .avatar}
 
-`is this code`
+# Halfh

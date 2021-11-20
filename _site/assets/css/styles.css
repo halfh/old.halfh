@@ -14,6 +14,10 @@ nav .nav-icon { width: 2rem; fill: hotpink; }
 
 .content .icon-header { display: block; width: 20vw; }
 
+.content .avatar { width: 80%; float: right; border-radius: 100%; transition: all 0.5s; transform: rotate(13deg); }
+
+.content .avatar:hover { transform: scale(0.8); }
+
 .content hr { border-bottom: 0.5rem rgba(32, 178, 170, 0.5) double; }
 
 .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 { text-transform: uppercase; }

@@ -67,6 +67,16 @@ nav {
 		display: block;
 		width: 20vw;
 	}
+	.avatar {
+		width: 80%;
+		float: right;
+		border-radius: 100%;
+		transition: all 0.5s;
+		transform: rotate(13deg);
+		&:hover {
+			transform: scale(0.8);
+		}
+	}
 	hr {
 		border-bottom: 0.5rem $bgo double;
 	}
@@ -203,28 +213,3 @@ nav {
 		}
 	}
 }
-// @media (min-width: 30rem) and (max-width: 50rem) and (orientation: landscape) {
-// 	body {
-// 		background-color: $dg;
-// 		// background-image: url('/assets/img/bg_med.webp');
-// 		background-repeat: no-repeat;
-// 		background-size: 100vw auto;
-// 	}
-// }
-// @media (max-width: 40rem) and (orientation: portrait) {
-// 	body {
-// 		background-color: $dg;
-// 		// background-image: url('/assets/img/bg.webp');
-// 		background-repeat: no-repeat;
-// 		background-size: auto 100vh;
-// 		background-position: top -10vw auto auto;
-// 	}
-// }
-// @media (min-width: 60rem) and (orientation: portrait) {
-// 	body {
-// 		.content {
-// 			margin: auto;
-// 			width: 50vw;
-// 		}
-// 	}
-// }
