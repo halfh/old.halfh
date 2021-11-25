@@ -1,8 +1,36 @@
-* { margin: 0px; padding: 0px; box-sizing: border-box; }
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap");
+:root { --ff-heading: "Alegreya", serif; --shadow-color: 0deg 0% 0%; --shadow-elevation-low: 1px 1px 1.1px hsl(var(--shadow-color) / 0.31),
+        1.5px 1.5px 1.6px -2.5px hsl(var(--shadow-color) / 0.21),
+        5px 5px 5.3px -5px hsl(var(--shadow-color) / 0.1); --shadow-elevation-medium: 1px 1px 1.1px hsl(var(--shadow-color) / 0.26),
+        1.4px 1.4px 1.5px -1.2px hsl(var(--shadow-color) / 0.21),
+        4px 4px 4.2px -2.5px hsl(var(--shadow-color) / 0.16),
+        11.1px 11.1px 11.8px -3.7px hsl(var(--shadow-color) / 0.11),
+        25px 25px 26.5px -5px hsl(var(--shadow-color) / 0.05); --shadow-elevation-high: 1px 1px 1.1px hsl(var(--shadow-color) / 0.24),
+        1.2px 1.2px 1.3px -0.6px hsl(var(--shadow-color) / 0.22),
+        2.6px 2.6px 2.8px -1.1px hsl(var(--shadow-color) / 0.2),
+        6.5px 6.5px 6.9px -1.7px hsl(var(--shadow-color) / 0.17),
+        14.1px 14.1px 15px -2.2px hsl(var(--shadow-color) / 0.15),
+        26.5px 26.5px 28.1px -2.8px hsl(var(--shadow-color) / 0.12),
+        45.1px 45.1px 47.8px -3.3px hsl(var(--shadow-color) / 0.1),
+        71.1px 71.1px 75.4px -3.9px hsl(var(--shadow-color) / 0.07),
+        105.6px 105.6px 112px -4.4px hsl(var(--shadow-color) / 0.05),
+        150px 150px 159.1px -5px hsl(var(--shadow-color) / 0.02); }
 
-body { overflow: hidden; background-color: rgba(4, 25, 24, 0.5); background-image: url("/assets/img/bigbg.webp"); background-repeat: no-repeat; background-size: cover; background-attachment: fixed; color: white; width: 100%; margin: 0; padding: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-nav { background-color: rgba(4, 25, 24, 0.5); padding: 0.5rem; position: fixed; width: 100%; overflow: hidden; top: 0; }
+*::before, *::after { box-sizing: border-box; }
+
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+
+input, button, textarea, select { font: inherit; }
+
+p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+
+h1, h2, h3, h4, h5, h6 { font-family: var(--ff-heading); }
+
+body { line-height: 1.5; -webkit-font-smoothing: antialiased; overflow: hidden; background-color: rgba(4, 25, 24, 0.5); background-image: url("/assets/img/bigbg.webp"); background-repeat: no-repeat; background-size: cover; background-attachment: fixed; color: white; width: 100%; margin: 0; padding: 0; }
+
+nav { background-color: rgba(4, 25, 24, 0.5); padding: 0.5rem; position: fixed; width: 100%; overflow: hidden; box-shadow: var(--shadow-elevation-high); top: 0; }
 
 nav a { font-weight: bold; font-size: 2rem; text-decoration: none; color: hotpink; border-bottom: 0.3rem solid white; display: inline-flex; margin: 0; padding: 0; line-height: 2rem; }
 
@@ -10,35 +38,57 @@ nav a.check { padding-right: 1px; }
 
 nav .nav-icon { width: 2rem; fill: hotpink; }
 
-.content { background-color: rgba(4, 25, 24, 0.5); overflow-y: scroll; width: 100%; height: 90vh; display: flex; align-items: stretch; justify-content: center; margin: 10vh 0; }
+.content { background-color: rgba(4, 25, 24, 0.5); overflow-y: scroll; width: 100%; height: 90vh; display: flex; align-items: stretch; justify-content: center; margin: 12vh 0; }
 
 .content .icon-header { display: block; width: 20vw; }
 
-.content .avatar { width: 80%; float: right; border-radius: 100%; transition: all 0.5s; transform: rotate(13deg); }
+.content .avatar { width: 50vw; float: right; transition: all 0.5s; transform: scale(0.8); border-radius: 25%; padding: 10%; }
 
-.content .avatar:hover { transform: scale(0.8); }
+.content .avatar:hover { transform: rotate(13deg); border-radius: 50%; }
+
+.content .avatar::before { content: ""; display: block; background: rgba(4, 25, 24, 0.5); width: inherit; border: 1rem solid hotpink; }
 
 .content hr { border-bottom: 0.5rem rgba(32, 178, 170, 0.5) double; }
 
-.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 { text-transform: uppercase; }
+.content h1 { text-transform: uppercase; }
 
 .content p { font-size: 1.2rem; }
 
 .content article { padding: 2rem; }
 
-.content article header { display: flex; align-items: center; text-align: center; justify-content: center; background: rgba(4, 25, 24, 0.5); border-left: 0.3rem solid hotpink; border-bottom: 0.3rem solid hotpink; border-right: 0.3rem solid lightseagreen; border-top: 0.3rem solid lightseagreen; }
+.content article header { display: flex; align-items: center; text-align: center; justify-content: center; background: rgba(4, 25, 24, 0.5); border-left: 0.3rem solid hotpink; border-bottom: 0.3rem solid hotpink; border-right: 0.3rem solid lightseagreen; border-top: 0.3rem solid lightseagreen; box-shadow: var(--shadow-elevation-high); }
 
 .content article header time { color: hotpink; }
 
-.content article main p { margin: 0.5rem 0; padding: 0.1rem 0; }
+.content article main { padding: 1rem; border-right: 0.3rem solid lightseagreen; border-bottom: 0.3rem solid lightseagreen; border-left: 0.3rem solid hotpink; box-shadow: var(--shadow-elevation-high); }
 
-.content article main p:first-of-type { margin: 1rem 0rem; }
+.content article main p { line-height: 1.5rem; margin-bottom: 1rem; }
 
-.content article main h1, .content article main h2, .content article main h3, .content article main h4, .content article main h5, .content article main h6 { border-bottom: 0.5rem double lightseagreen; }
+.content article main h1, .content article main h2, .content article main h3 { margin-bottom: 1rem; }
 
-.content article main h1 { font-weight: bold; }
+.content article main h1 { border-bottom: 0.5rem double lightseagreen; font-weight: 700; }
 
-.content article footer { height: 1vh; }
+.content article main h2 { border-bottom: 0.5rem double hotpink; }
+
+.content article main h3 { border-bottom: 0.5rem double white; }
+
+.content article main a { display: inline-block; font-weight: bold; line-height: 1rem; padding: 0 0.3rem; border-radius: 0.3rem; background-color: rgba(32, 178, 170, 0.5); box-shadow: var(--shadow-elevation-low); text-decoration: none; border-bottom: 0.3rem solid white; }
+
+.content article main a:visited { border-bottom: 0.3rem solid hotpink; }
+
+.content article main a:focus, .content article main a:hover { color: hotpink; border-bottom: 0.3rem solid white; }
+
+.content article ul { margin-bottom: 1rem; }
+
+.content article ul li { font-size: 1.2rem; line-height: 1.1rem; list-style-position: inside; list-style-type: square; }
+
+.content article ul li > ul > li { padding-left: 1rem; }
+
+.content article ul li > ul > li::marker { color: lightseagreen; font-weight: bold; }
+
+.content article ul li::marker { color: hotpink; font-weight: bold; }
+
+.content article footer { min-height: 5rem; display: inline-flex; text-align: right; line-height: 5rem; padding: 0; margin: 0; }
 
 .content article code { border: 0.1rem solid rgba(32, 178, 170, 0.5); background-color: rgba(4, 25, 24, 0.5); padding: 0rem 0.3rem; margin: 0.1rem; text-align: left; display: inline-block; color: white; }
 
@@ -48,19 +98,19 @@ nav .nav-icon { width: 2rem; fill: hotpink; }
 
 .content a:visited { color: lightseagreen; background-color: rgba(4, 25, 24, 0.5); }
 
-.content ul { list-style-type: none; padding: 1rem; }
+.content ul.listPosts { list-style-type: none; padding: 1rem; }
 
-.content ul li { background-color: rgba(4, 25, 24, 0.5); }
+.content ul.listPosts li { background-color: rgba(4, 25, 24, 0.5); }
 
-.content ul li:nth-child(odd) { text-align: left; border-left: 0.3rem solid hotpink; border-bottom: 0.3rem solid hotpink; }
+.content ul.listPosts li:nth-child(odd) { text-align: left; border-left: 0.3rem solid hotpink; border-bottom: 0.3rem solid hotpink; }
 
-.content ul li:nth-child(even) { text-align: right; border-bottom: 0.3rem solid lightseagreen; border-right: 0.3rem solid lightseagreen; }
+.content ul.listPosts li:nth-child(even) { text-align: right; border-bottom: 0.3rem solid lightseagreen; border-right: 0.3rem solid lightseagreen; }
 
 .content .post-excerpt { padding: 0 1rem; }
 
 /** place to put media q stuff**/
 @media (max-width: 22rem) and (orientation: portrait) { nav a span { transition: all 0.5s; display: none; opacity: 0; } nav a.check { padding-right: 0px; } }
 
-@media (min-width: 60rem) { .content { padding: 0 15vw; } nav { padding: 0 15vw; } nav a:first-of-type { margin-left: 2rem; } }
+@media (min-width: 60rem) { .content { padding: 0 15vw; } nav { padding: 1vh 15vw; } nav a:first-of-type { margin-left: 2rem; } }
 
 /*# sourceMappingURL=styles.css.map */

@@ -6,210 +6,330 @@ $dg: rgba(4, 25, 24, 0.5);
 $wg: rgba(255, 255, 255, 0.2);
 $bgo: rgba(32, 178, 170, 0.5);
 
-* {
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap");
+
+:root {
+    --ff-heading: "Alegreya", serif;
+    --shadow-color: 0deg 0% 0%;
+    --shadow-elevation-low: 1px 1px 1.1px hsl(var(--shadow-color) / 0.31),
+        1.5px 1.5px 1.6px -2.5px hsl(var(--shadow-color) / 0.21),
+        5px 5px 5.3px -5px hsl(var(--shadow-color) / 0.1);
+    --shadow-elevation-medium: 1px 1px 1.1px hsl(var(--shadow-color) / 0.26),
+        1.4px 1.4px 1.5px -1.2px hsl(var(--shadow-color) / 0.21),
+        4px 4px 4.2px -2.5px hsl(var(--shadow-color) / 0.16),
+        11.1px 11.1px 11.8px -3.7px hsl(var(--shadow-color) / 0.11),
+        25px 25px 26.5px -5px hsl(var(--shadow-color) / 0.05);
+    --shadow-elevation-high: 1px 1px 1.1px hsl(var(--shadow-color) / 0.24),
+        1.2px 1.2px 1.3px -0.6px hsl(var(--shadow-color) / 0.22),
+        2.6px 2.6px 2.8px -1.1px hsl(var(--shadow-color) / 0.2),
+        6.5px 6.5px 6.9px -1.7px hsl(var(--shadow-color) / 0.17),
+        14.1px 14.1px 15px -2.2px hsl(var(--shadow-color) / 0.15),
+        26.5px 26.5px 28.1px -2.8px hsl(var(--shadow-color) / 0.12),
+        45.1px 45.1px 47.8px -3.3px hsl(var(--shadow-color) / 0.1),
+        71.1px 71.1px 75.4px -3.9px hsl(var(--shadow-color) / 0.07),
+        105.6px 105.6px 112px -4.4px hsl(var(--shadow-color) / 0.05),
+        150px 150px 159.1px -5px hsl(var(--shadow-color) / 0.02);
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--ff-heading);
+}
 body {
-	overflow: hidden;
-	background-color: $dg;
-	background-image: url('/assets/img/bigbg.webp');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-	color: $text;
-	width: 100%;
-	margin: 0;
-	padding: 0;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    background-color: $dg;
+    background-image: url("/assets/img/bigbg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: $text;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 nav {
-	background-color: $dg;
-	padding: 0.5rem;
-	position: fixed;
-	width: 100%;
-	overflow: hidden;
-	// border: 1px solid pink;
-	top: 0;
-	a {
-		font-weight: bold;
-		font-size: 2rem;
-		text-decoration: none;
-		color: $link;
-		border-bottom: 0.3rem solid $text;
-		display: inline-flex;
-		margin: 0;
-		padding: 0;
-		line-height: 2rem;
-	}
-	a.check {
-		padding-right: 1px;
-	}
-	.nav-icon {
-		width: 2rem;
-		fill: $link;
-	}
+    background-color: $dg;
+    padding: 0.5rem;
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: var(--shadow-elevation-high);
+    // border: 1px solid pink;
+    top: 0;
+    a {
+        font-weight: bold;
+        font-size: 2rem;
+        text-decoration: none;
+        color: $link;
+        border-bottom: 0.3rem solid $text;
+        display: inline-flex;
+        margin: 0;
+        padding: 0;
+        line-height: 2rem;
+    }
+    a.check {
+        padding-right: 1px;
+    }
+    .nav-icon {
+        width: 2rem;
+        fill: $link;
+    }
 }
 .content {
-	background-color: $dg;
-	overflow-y: scroll;
-	width: 100%;
-	height: 90vh;
-	display: flex;
-	align-items: stretch;
-	justify-content: center;
-	margin: 10vh 0;
-	//dev shit
-	// background: #000000;
-	// nested el in .content
-	.icon-header {
-		display: block;
-		width: 20vw;
-	}
-	.avatar {
-		width: 80%;
-		float: right;
-		border-radius: 100%;
-		transition: all 0.5s;
-		transform: rotate(13deg);
-		&:hover {
-			transform: scale(0.8);
-		}
-	}
-	hr {
-		border-bottom: 0.5rem $bgo double;
-	}
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		text-transform: uppercase;
-	}
-	p {
-		font-size: 1.2rem;
-	}
-	article {
-		padding: 2rem;
+    background-color: $dg;
+    overflow-y: scroll;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    margin: 12vh 0;
+    //dev shit
+    // background: #000000;
+    // nested el in .content
+    .icon-header {
+        display: block;
+        width: 20vw;
+    }
+    .avatar {
+        width: 50vw;
+        float: right;
+        transition: all 0.5s;
+        transform: scale(0.8);
+        border-radius: 25%;
+        padding: 10%;
+        &:hover {
+            transform: rotate(13deg);
+            border-radius: 50%;
+        }
+        &::before {
+            content: "";
+            display: block;
+            background: $dg;
+            width: inherit;
+            border: 1rem solid $link;
+        }
+    }
+    hr {
+        border-bottom: 0.5rem $bgo double;
+    }
+    h1 {
+        text-transform: uppercase;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+    article {
+        padding: 2rem;
+        header {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            background: $dg;
+            border-left: 0.3rem solid $link;
+            border-bottom: 0.3rem solid $link;
+            border-right: 0.3rem solid $bg;
+            border-top: 0.3rem solid $bg;
+            box-shadow: var(--shadow-elevation-high);
+            time {
+                color: $link;
+            }
+        }
+        main {
+            padding: 1rem;
+            border-right: 0.3rem solid $bg;
+            border-bottom: 0.3rem solid $bg;
+            border-left: 0.3rem solid $link;
 
-		header {
-			display: flex;
-			align-items: center;
-			text-align: center;
-			justify-content: center;
-			background: $dg;
-			border-left: 0.3rem solid $link;
-			border-bottom: 0.3rem solid $link;
-			border-right: 0.3rem solid $bg;
-			border-top: 0.3rem solid $bg;
-			time {
-				color: $link;
-			}
-		}
-		main {
-			p {
-				margin: 0.5rem 0;
-				padding: 0.1rem 0;
-			}
-			p:first-of-type {
-				margin: 1rem 0rem;
-			}
-			h1,
-			h2,
-			h3,
-			h4,
-			h5,
-			h6 {
-				border-bottom: 0.5rem double $bg;
-			}
-			h1 {
-				font-weight: bold;
-			}
-		}
-		footer {
-			height: 1vh;
-		}
-		code {
-			border: 0.1rem solid $bgo;
-			background-color: $dg;
-			padding: 0rem 0.3rem;
-			margin: 0.1rem;
-			text-align: left;
-			display: inline-block;
-			color: $highlight;
-		}
-		pre {
-			font-size: 1rem;
-		}
-	}
+            box-shadow: var(--shadow-elevation-high);
 
-	a {
-		text-decoration: none;
-		// text-align: right;
-		color: $link;
-		// border-bottom: 0.2rem solid $text;
-		display: inline-flex;
-		margin: 0;
-		padding: 0;
-		// background-color: $bgo;
-	}
-	a:visited {
-		color: $bg;
-		background-color: $dg;
-	}
-	ul {
-		// background-color: $dg;
-		list-style-type: none;
-		padding: 1rem;
-		li {
-			background-color: $dg;
-		}
-		li:nth-child(odd) {
-			text-align: left;
-			border-left: 0.3rem solid $link;
-			border-bottom: 0.3rem solid $link;
-		}
-		li:nth-child(even) {
-			text-align: right;
-			border-bottom: 0.3rem solid $bg;
-			border-right: 0.3rem solid $bg;
-		}
-	}
+            p {
+                // padding: 0 0.5rem;
+                line-height: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            h1,
+            h2,
+            h3 {
+                // padding: 0 0.5rem;
+                margin-bottom: 1rem;
+            }
+            h1 {
+                border-bottom: 0.5rem double $bg;
+                font-weight: 700;
+            }
+            h2 {
+                border-bottom: 0.5rem double $link;
+            }
+            h3 {
+                border-bottom: 0.5rem double $highlight;
+            }
+            a {
+                display: inline-block;
+                font-weight: bold;
+                line-height: 1rem;
+                padding: 0 0.3rem;
+                border-radius: 0.3rem;
+                background-color: $bgo;
+                box-shadow: var(--shadow-elevation-low);
+                text-decoration: none;
+                border-bottom: 0.3rem solid $highlight;
+                &:visited {
+                    border-bottom: 0.3rem solid $link;
+                }
+                &:focus,
+                &:hover {
+                    color: $link;
+                    border-bottom: 0.3rem solid $highlight;
+                }
+            }
+        }
+        ul {
+            margin-bottom: 1rem;
+            li {
+                font-size: 1.2rem;
+                line-height: 1.1rem;
+                list-style-position: inside;
+                list-style-type: square;
+                & > ul > li {
+                    padding-left: 1rem;
+                    &::marker {
+                        color: $bg;
+                        font-weight: bold;
+                    }
+                }
+                &::marker {
+                    color: $link;
+                    font-weight: bold;
+                }
+            }
+        }
+        footer {
+            min-height: 5rem;
+            display: inline-flex;
+            text-align: right;
+            line-height: 5rem;
+            padding: 0;
+            margin: 0;
+        }
+        code {
+            border: 0.1rem solid $bgo;
+            background-color: $dg;
+            padding: 0rem 0.3rem;
+            margin: 0.1rem;
+            text-align: left;
+            display: inline-block;
+            color: $highlight;
+        }
+        pre {
+            font-size: 1rem;
+        }
+    }
 
-	.post-excerpt {
-		padding: 0 1rem;
-	}
+    a {
+        text-decoration: none;
+        // text-align: right;
+        color: $link;
+        // border-bottom: 0.2rem solid $text;
+        display: inline-flex;
+        margin: 0;
+        padding: 0;
+        // background-color: $bgo;
+    }
+    a:visited {
+        color: $bg;
+        background-color: $dg;
+    }
+    ul.listPosts {
+        // background-color: $dg;
+        list-style-type: none;
+        padding: 1rem;
+        li {
+            background-color: $dg;
+        }
+        li:nth-child(odd) {
+            text-align: left;
+            border-left: 0.3rem solid $link;
+            border-bottom: 0.3rem solid $link;
+        }
+        li:nth-child(even) {
+            text-align: right;
+            border-bottom: 0.3rem solid $bg;
+            border-right: 0.3rem solid $bg;
+        }
+    }
+
+    .post-excerpt {
+        padding: 0 1rem;
+    }
 }
 /** place to put media q stuff**/
 
 @media (max-width: 22rem) and (orientation: portrait) {
-	nav {
-		a {
-			span {
-				transition: all 0.5s;
-				// transition-delay: 0.1s;
-				display: none;
-				opacity: 0;
-				// visibility: hidden;
-			}
-		}
-		a.check {
-			padding-right: 0px;
-		}
-	}
+    nav {
+        a {
+            span {
+                transition: all 0.5s;
+                // transition-delay: 0.1s;
+                display: none;
+                opacity: 0;
+                // visibility: hidden;
+            }
+        }
+        a.check {
+            padding-right: 0px;
+        }
+    }
 }
 
 // big screen
 @media (min-width: 60rem) {
-	.content {
-		padding: 0 15vw;
-	}
-	nav {
-		padding: 0 15vw;
-		a:first-of-type {
-			margin-left: 2rem;
-		}
-	}
+    .content {
+        padding: 0 15vw;
+    }
+    nav {
+        padding: 1vh 15vw;
+        a:first-of-type {
+            margin-left: 2rem;
+        }
+    }
 }
