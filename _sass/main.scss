@@ -7,9 +7,23 @@ $wg: rgba(255, 255, 255, 0.2);
 $bgo: rgba(32, 178, 170, 0.5);
 
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Gruppo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;0,900;1,800&display=swap");
 :root {
-    --ff-heading: "Alegreya", serif;
+    --clr-link: radial-gradient(
+        circle,
+        rgba(179, 50, 156, 1) 50%,
+        rgba(32, 178, 170, 1) 100%
+    );
+    // --ff-heading: "Alegreya", serif;
+    // --ff-heading: "Big Shoulders Display", cursive;
+    --ff-heading: "Bitter", serif;
+    // --ff-text: "Gruppo", cursive;
+    --ff-text: "Share", cursive;
+    --ff-default: system-ui, -apple-system, BlinkMacSystemFont,
+        ".SFNSText-Regular", sans-serif;
     --shadow-color: 0deg 0% 0%;
     --shadow-elevation-low: 1px 1px 1.1px hsl(var(--shadow-color) / 0.31),
         1.5px 1.5px 1.6px -2.5px hsl(var(--shadow-color) / 0.21),
@@ -156,6 +170,7 @@ nav {
     }
     p {
         font-size: 1.2rem;
+        font-family: var(--ff-text);
     }
     article {
         padding: 2rem;
@@ -226,6 +241,8 @@ nav {
         ul {
             margin-bottom: 1rem;
             li {
+                font-family: var(--ff-text);
+
                 font-size: 1.2rem;
                 line-height: 1.1rem;
                 list-style-position: inside;

@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap");
-:root { --ff-heading: "Alegreya", serif; --shadow-color: 0deg 0% 0%; --shadow-elevation-low: 1px 1px 1.1px hsl(var(--shadow-color) / 0.31),
+@import url("https://fonts.googleapis.com/css2?family=Gruppo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;0,900;1,800&display=swap");
+:root { --clr-link: radial-gradient(
+        circle,
+        rgba(179, 50, 156, 1) 50%,
+        rgba(32, 178, 170, 1) 100%
+    ); --ff-heading: "Bitter", serif; --ff-text: "Share", cursive; --ff-default: system-ui, -apple-system, BlinkMacSystemFont,
+        ".SFNSText-Regular", sans-serif; --shadow-color: 0deg 0% 0%; --shadow-elevation-low: 1px 1px 1.1px hsl(var(--shadow-color) / 0.31),
         1.5px 1.5px 1.6px -2.5px hsl(var(--shadow-color) / 0.21),
         5px 5px 5.3px -5px hsl(var(--shadow-color) / 0.1); --shadow-elevation-medium: 1px 1px 1.1px hsl(var(--shadow-color) / 0.26),
         1.4px 1.4px 1.5px -1.2px hsl(var(--shadow-color) / 0.21),
@@ -52,7 +61,7 @@ nav .nav-icon { width: 2rem; fill: hotpink; }
 
 .content h1 { text-transform: uppercase; }
 
-.content p { font-size: 1.2rem; }
+.content p { font-size: 1.2rem; font-family: var(--ff-text); }
 
 .content article { padding: 2rem; }
 
@@ -80,7 +89,7 @@ nav .nav-icon { width: 2rem; fill: hotpink; }
 
 .content article ul { margin-bottom: 1rem; }
 
-.content article ul li { font-size: 1.2rem; line-height: 1.1rem; list-style-position: inside; list-style-type: square; }
+.content article ul li { font-family: var(--ff-text); font-size: 1.2rem; line-height: 1.1rem; list-style-position: inside; list-style-type: square; }
 
 .content article ul li > ul > li { padding-left: 1rem; }
 
