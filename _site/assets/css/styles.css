@@ -37,7 +37,9 @@ p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 
 h1, h2, h3, h4, h5, h6 { font-family: var(--ff-heading); }
 
-body { line-height: 1.5; -webkit-font-smoothing: antialiased; overflow: hidden; background-color: rgba(4, 25, 24, 0.5); background-image: url("/assets/img/bigbg.webp"); background-repeat: no-repeat; background-size: cover; background-attachment: fixed; color: white; width: 100%; margin: 0; padding: 0; }
+body { line-height: 1.5; -webkit-font-smoothing: antialiased; background-color: rgba(4, 25, 24, 0.5); background-image: url("/assets/img/bigbg.webp"); background-repeat: no-repeat; background-size: cover; background-attachment: fixed; color: white; width: 100%; margin: 0; padding: 0; }
+
+footer { min-height: 5rem; color: white; background-color: rgba(4, 25, 24, 0.5); text-align: right; line-height: 5rem; padding: 0 10vw; margin: 0; }
 
 nav { background-color: rgba(4, 25, 24, 0.5); padding: 0.5rem; position: fixed; width: 100%; overflow: hidden; box-shadow: var(--shadow-elevation-high); top: 0; }
 
@@ -47,23 +49,41 @@ nav a.check { padding-right: 1px; }
 
 nav .nav-icon { width: 2rem; fill: hotpink; }
 
-.content { background-color: rgba(4, 25, 24, 0.5); overflow-y: scroll; width: 100%; height: 90vh; display: flex; align-items: stretch; justify-content: center; margin: 12vh 0; }
+.content { background-color: rgba(4, 25, 24, 0.5); box-shadow: var(--shadow-elevation-high); width: 100%; height: calc(100% - 10vh); display: flex; flex-direction: row; align-items: stretch; justify-content: center; margin: 0; margin-top: clamp(4rem, 10vh, 2rem); margin-bottom: clamp(1rem, 10vh, 0.5rem); }
 
-.content .icon-header { display: block; width: 20vw; }
+.content .about_section { box-shadow: var(--shadow-elevation-low); padding: 0 2rem; background-color: lightseagreen; }
 
-.content .avatar { width: 50vw; float: right; transition: all 0.5s; transform: scale(0.8); border-radius: 25%; padding: 10%; }
+.content .card { box-shadow: var(--shadow-elevation-low); background-color: rgba(255, 255, 255, 0.2); display: inline-block; text-align: right; max-width: calc(50vw-2rem); }
 
-.content .avatar:hover { transform: rotate(13deg); border-radius: 50%; }
+.content .card p, .content .card h1, .content .card ul { padding: 0 0.5rem; }
 
-.content .avatar::before { content: ""; display: block; background: rgba(4, 25, 24, 0.5); width: inherit; border: 1rem solid hotpink; }
+.content .card .avatar { transition: all 0.5s; transform: scale(0.8); border-radius: 25%; padding: 10%; }
+
+.content .card .avatar:hover { transform: rotate(13deg); border-radius: 50%; }
+
+.content .card .avatar::before { content: ""; display: block; background: rgba(4, 25, 24, 0.5); width: inherit; border: 1rem solid hotpink; }
+
+.content .card h1 { color: hotpink; background-color: lightseagreen; line-height: 1.5rem; font-size: 1.5rem; font-family: var(--ff-heading); margin-bottom: 0.5rem; }
+
+.content .card p { line-height: 1rem; font-size: 1rem; font-family: var(--ff-text); margin-bottom: 0.5rem; }
+
+.content .card ul { list-style-type: none; padding-bottom: 0.5rem; }
+
+.content .card ul li { display: inline-flex; }
+
+.content .card ul li a { color: white; display: inline-block; font-weight: bold; line-height: 1rem; padding: 0 0.3rem; border-radius: 0.3rem; background-color: rgba(32, 178, 170, 0.5); box-shadow: var(--shadow-elevation-low); text-decoration: none; border-bottom: 0.3rem solid white; }
+
+.content .card ul li a:visited { border-bottom: 0.3rem solid hotpink; }
+
+.content .card ul li a:focus, .content .card ul li a:hover { color: hotpink; border-bottom: 0.3rem solid white; }
 
 .content hr { border-bottom: 0.5rem rgba(32, 178, 170, 0.5) double; }
 
 .content h1 { text-transform: uppercase; }
 
-.content p { font-size: 1.2rem; font-family: var(--ff-text); }
+.content p { font-size: 1.2rem; line-height: 1.2rem; font-family: var(--ff-text); }
 
-.content article { padding: 2rem; }
+.content article { padding: 2rem; width: 100%; }
 
 .content article header { display: flex; align-items: center; text-align: center; justify-content: center; background: rgba(4, 25, 24, 0.5); border-left: 0.3rem solid hotpink; border-bottom: 0.3rem solid hotpink; border-right: 0.3rem solid lightseagreen; border-top: 0.3rem solid lightseagreen; box-shadow: var(--shadow-elevation-high); }
 
@@ -72,6 +92,8 @@ nav .nav-icon { width: 2rem; fill: hotpink; }
 .content article main { padding: 1rem; border-right: 0.3rem solid lightseagreen; border-bottom: 0.3rem solid lightseagreen; border-left: 0.3rem solid hotpink; box-shadow: var(--shadow-elevation-high); }
 
 .content article main p { line-height: 1.5rem; margin-bottom: 1rem; }
+
+.content article main pre { overflow: auto; }
 
 .content article main h1, .content article main h2, .content article main h3 { margin-bottom: 1rem; }
 
@@ -97,8 +119,6 @@ nav .nav-icon { width: 2rem; fill: hotpink; }
 
 .content article ul li::marker { color: hotpink; font-weight: bold; }
 
-.content article footer { min-height: 5rem; display: inline-flex; text-align: right; line-height: 5rem; padding: 0; margin: 0; }
-
 .content article code { border: 0.1rem solid rgba(32, 178, 170, 0.5); background-color: rgba(4, 25, 24, 0.5); padding: 0rem 0.3rem; margin: 0.1rem; text-align: left; display: inline-block; color: white; }
 
 .content article pre { font-size: 1rem; }
@@ -115,11 +135,19 @@ nav .nav-icon { width: 2rem; fill: hotpink; }
 
 .content ul.listPosts li:nth-child(even) { text-align: right; border-bottom: 0.3rem solid lightseagreen; border-right: 0.3rem solid lightseagreen; }
 
+.content .side-bar h1 { display: block; width: auto; }
+
+.content .side-bar .icon-header { display: block; max-width: 50%; }
+
 .content .post-excerpt { padding: 0 1rem; }
 
-/** place to put media q stuff**/
-@media (max-width: 22rem) and (orientation: portrait) { nav a span { transition: all 0.5s; display: none; opacity: 0; } nav a.check { padding-right: 0px; } }
+.content .post-excerpt:first-of-type { border-top: 0.3rem solid lightseagreen; }
 
-@media (min-width: 60rem) { .content { padding: 0 15vw; } nav { padding: 1vh 15vw; } nav a:first-of-type { margin-left: 2rem; } }
+/** place to put media q stuff**/
+@media (max-width: 22rem) and (orientation: portrait) { nav a span { transition: all 0.5s; display: none; opacity: 0; } nav a.check { padding-right: 0px; } .content { flex-direction: column; } }
+
+@media (min-width: ) and (max-width: 44rem) { .content { flex-direction: column; } }
+
+@media (min-width: 60rem) { .content { padding: 0 15vw; flex-direction: row; } nav { padding: 1vh 15vw; } nav a:first-of-type { margin-left: 2rem; } }
 
 /*# sourceMappingURL=styles.css.map */

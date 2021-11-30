@@ -88,7 +88,7 @@ h6 {
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    overflow: hidden;
+    // overflow: hidden;
     background-color: $dg;
     background-image: url("/assets/img/bigbg.webp");
     background-repeat: no-repeat;
@@ -98,6 +98,16 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+}
+footer {
+    min-height: 5rem;
+    color: $text;
+    background-color: $dg;
+    // display: inline-flex;
+    text-align: right;
+    line-height: 5rem;
+    padding: 0 10vw;
+    margin: 0;
 }
 nav {
     background-color: $dg;
@@ -129,37 +139,96 @@ nav {
 }
 .content {
     background-color: $dg;
-    overflow-y: scroll;
+    box-shadow: var(--shadow-elevation-high);
+    // overflow-y: scroll;
     width: 100%;
-    height: 90vh;
+    height: calc(100% - 10vh);
     display: flex;
+    flex-direction: row;
+
     align-items: stretch;
     justify-content: center;
-    margin: 12vh 0;
-    //dev shit
-    // background: #000000;
-    // nested el in .content
-    .icon-header {
-        display: block;
-        width: 20vw;
+    margin: 0;
+    margin-top: clamp(4rem, 10vh, 2rem);
+    margin-bottom: clamp(1rem, 10vh, 0.5rem);
+
+    .about_section {
+        box-shadow: var(--shadow-elevation-low);
+        padding: 0 2rem;
+        background-color: $bg;
     }
-    .avatar {
-        width: 50vw;
-        float: right;
-        transition: all 0.5s;
-        transform: scale(0.8);
-        border-radius: 25%;
-        padding: 10%;
-        &:hover {
-            transform: rotate(13deg);
-            border-radius: 50%;
+    .card {
+        box-shadow: var(--shadow-elevation-low);
+        // & > * {
+        //     //debug
+        //     outline: 0.1rem solid $link;
+        // }
+        background-color: $wg;
+        display: inline-block;
+        text-align: right;
+        max-width: calc(50vw-2rem);
+        p,
+        h1,
+        ul {
+            padding: 0 0.5rem;
         }
-        &::before {
-            content: "";
-            display: block;
-            background: $dg;
-            width: inherit;
-            border: 1rem solid $link;
+        .avatar {
+            transition: all 0.5s;
+            transform: scale(0.8);
+            border-radius: 25%;
+            padding: 10%;
+            &:hover {
+                transform: rotate(13deg);
+                border-radius: 50%;
+            }
+            &::before {
+                content: "";
+                display: block;
+                background: $dg;
+                width: inherit;
+                border: 1rem solid $link;
+            }
+        }
+        h1 {
+            color: $link;
+            background-color: $bg;
+            line-height: 1.5rem;
+            font-size: 1.5rem;
+            font-family: var(--ff-heading);
+            margin-bottom: 0.5rem;
+        }
+        p {
+            line-height: 1rem;
+            font-size: 1rem;
+            font-family: var(--ff-text);
+            margin-bottom: 0.5rem;
+        }
+        ul {
+            list-style-type: none;
+            padding-bottom: 0.5rem;
+            li {
+                display: inline-flex;
+                a {
+                    color: $text;
+                    display: inline-block;
+                    font-weight: bold;
+                    line-height: 1rem;
+                    padding: 0 0.3rem;
+                    border-radius: 0.3rem;
+                    background-color: $bgo;
+                    box-shadow: var(--shadow-elevation-low);
+                    text-decoration: none;
+                    border-bottom: 0.3rem solid $highlight;
+                    &:visited {
+                        border-bottom: 0.3rem solid $link;
+                    }
+                    &:focus,
+                    &:hover {
+                        color: $link;
+                        border-bottom: 0.3rem solid $highlight;
+                    }
+                }
+            }
         }
     }
     hr {
@@ -170,10 +239,13 @@ nav {
     }
     p {
         font-size: 1.2rem;
+        line-height: 1.2rem;
         font-family: var(--ff-text);
     }
     article {
+        // background-color: $dg;
         padding: 2rem;
+        width: 100%;
         header {
             display: flex;
             align-items: center;
@@ -201,6 +273,9 @@ nav {
                 // padding: 0 0.5rem;
                 line-height: 1.5rem;
                 margin-bottom: 1rem;
+            }
+            pre {
+                overflow: auto;
             }
             h1,
             h2,
@@ -260,14 +335,7 @@ nav {
                 }
             }
         }
-        footer {
-            min-height: 5rem;
-            display: inline-flex;
-            text-align: right;
-            line-height: 5rem;
-            padding: 0;
-            margin: 0;
-        }
+
         code {
             border: 0.1rem solid $bgo;
             background-color: $dg;
@@ -314,9 +382,22 @@ nav {
             border-right: 0.3rem solid $bg;
         }
     }
-
+    .side-bar {
+        h1 {
+            display: block;
+            width: auto;
+        }
+        .icon-header {
+            display: block;
+            // width: 10rem;
+            max-width: 50%;
+        }
+    }
     .post-excerpt {
         padding: 0 1rem;
+        &:first-of-type {
+            border-top: 0.3rem solid $bg;
+        }
     }
 }
 /** place to put media q stuff**/
@@ -336,12 +417,22 @@ nav {
             padding-right: 0px;
         }
     }
+    .content {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: ) and (max-width: 44rem) {
+    .content {
+        flex-direction: column;
+    }
 }
 
 // big screen
 @media (min-width: 60rem) {
     .content {
         padding: 0 15vw;
+        flex-direction: row;
     }
     nav {
         padding: 1vh 15vw;
