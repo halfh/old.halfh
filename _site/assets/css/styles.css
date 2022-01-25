@@ -51,7 +51,7 @@ nav .nav-icon { width: 2rem; fill: hotpink; }
 
 .content { background-color: rgba(4, 25, 24, 0.5); box-shadow: var(--shadow-elevation-high); width: 100%; height: calc(100% - 10vh); display: flex; flex-direction: row; align-items: stretch; justify-content: center; margin: 0; margin-top: clamp(4rem, 10vh, 2rem); margin-bottom: clamp(1rem, 10vh, 0.5rem); }
 
-.content .about_section { box-shadow: var(--shadow-elevation-low); padding: 0 2rem; background-color: lightseagreen; }
+.content .about_section { box-shadow: var(--shadow-elevation-low); padding: 0 2rem; background: lightseagreen; background: linear-gradient(180deg, lightseagreen 0%, rgba(32, 178, 170, 0.5) 100%); }
 
 .content .card { box-shadow: var(--shadow-elevation-low); background-color: rgba(255, 255, 255, 0.2); display: inline-block; text-align: right; max-width: calc(50vw-2rem); }
 

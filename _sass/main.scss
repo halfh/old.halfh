@@ -155,7 +155,13 @@ nav {
     .about_section {
         box-shadow: var(--shadow-elevation-low);
         padding: 0 2rem;
-        background-color: $bg;
+        // background-color: $bg;
+        background: rgb(32, 178, 170);
+        background: linear-gradient(
+            180deg,
+            rgba(32, 178, 170, 1) 0%,
+            rgba(32, 178, 170, 0.5) 100%
+        );
     }
     .card {
         box-shadow: var(--shadow-elevation-low);
